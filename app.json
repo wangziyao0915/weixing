@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/choiceness/choiceness",
+    "pages/index/index",
+    "pages/my/my",
+    "component/title/title"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "书架",
+        "iconPath": "img/book2.png"
+      },
+      {
+        "pagePath": "pages/choiceness/choiceness",
+        "text": "精选",
+        "iconPath": "img/love.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "img/person.png"
+      }
+    ]
+  },
+
+    "usingComponents": {
+      "title": "component/title/title",
+      "introduce":"component/introduce/introduce"
+    },
+
+
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

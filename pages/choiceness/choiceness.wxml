@@ -1,0 +1,99 @@
+<!--pages/choiceness/choiceness.wxml-->
+
+<view class="choiceness">
+  <view class='heard'>
+    <view class="title"> 魔铁阅读 </view>
+    <view class="option">
+      <text data-flag="0" bindtap="optionclick" class="{{flag===0 && 'active'}}">男生</text>
+      <text data-flag="1" bindtap="optionclick" class="{{flag==1 && 'active'}}"> 女生</text>
+      <text data-flag="2" bindtap="optionclick" class="{{flag==2 && 'active'}}"> 出版</text> </view>
+    <view class="all-icon">
+      <view class="iconfont icon-0201chazhao"></view>
+      <view class="iconfont icon-more"></view>
+    </view>
+  </view>
+
+
+  <view>
+    <swiper indicator-dots='true' autoplay="true" class="swiper">
+      <block>
+        <swiper-item wx:for="{{bannerlist}}" wx:key="item.addressId">
+          <image src="{{item.imgUrl}}"> </image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <view class="section">
+    <view wx:for="{{sectionData}}" wx:key="item.name">
+      <view class="iconfont  {{item.icon}}"></view>
+      <view class="sectionName"> {{item.name}} </view>
+    </view>
+  </view>
+
+  <view class="recommend">
+    <view class="recommend-title">
+      <title title="主编力荐"></title>
+    </view>
+    <view class="recommend-content">
+      <!-- <view wx:for="{{promote}}" wx:key="item.bookName">
+        <image src="{{item.imgUrl}}"></image>
+        <view class="bookName">{{item.bookName}} </view>
+      </view> -->
+      <swiper display-multiple-items="3" autoplay="true" class="swiper" class="recommend-content-swiper" previous-margin="18px" skip-hidden-item-layout="true">
+        <block>
+          <swiper-item wx:for="{{recommend}}">
+            <view>
+              <image src="{{item.imgUrl}}"> </image>
+            </view>
+            <view> {{item.bookName}} </view>
+          </swiper-item>
+        </block>
+      </swiper>
+
+
+
+    </view>
+  </view>
+
+  <view class="featured">
+    <title title="本期主打分类"></title>
+    <view>
+      <introduce imgUrl="{{ bestsellersone.imgUrl}}" bookName="{{bestsellersone.bookName}}" introduction="{{bestsellersone.introduction}}" userImgUrl="{{bestsellersone.userImgUrl}}" penName="{{bestsellersone.penName}}" category="{{bestsellersone.category}}"></introduce>
+      <view wx:for="{{bestsellersList}}" wx:key="item.bookName" class="featured-box">
+        <view class="featured-show">
+          <view> {{item.bookName}} </view>
+          <view class="featured-show-penName"> {{item.penName}} </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+  <view class="everybody">
+    <title title="大家都在看"> </title>
+    <view class="everybody-content">
+      <view wx:for="{{everybody}}" class="everybody-item">
+        <image src="{{item.imgUrl}}"> </image>
+        <view> {{item.bookName}} </view>
+      </view>
+
+    </view>
+  </view>
+
+  <view class="endBook">
+    <title title="完本好书"> </title>
+    <view class="endBook-content">
+      <view wx:for="{{endBook}}" wx:key="item.bookName">
+       
+        <introduce   class="endBook-item"   imgUrl="{{ item.imgUrl}}" bookName="{{item.bookName}}" introduction="{{item.introduction}}" userImgUrl="{{item.userImgUrl}}" penName="{{item.penName}}" category="{{item.category}}"></introduce>
+        <view class="line"></view>
+      </view>
+     
+    </view>
+
+
+   
+  </view>
+   <view class="view-more">查看更多 </view>
+</view>
