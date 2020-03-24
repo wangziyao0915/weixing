@@ -12,21 +12,29 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
+    
+   
+
     "list": [
+     
       {
         "pagePath": "pages/index/index",
         "text": "书架",
-        "iconPath": "img/book2.png"
+        "iconPath": "img/book2.png",
+        "selectedIconPath": "img/book2.png"
+        
       },
       {
         "pagePath": "pages/choiceness/choiceness",
         "text": "精选",
-        "iconPath": "img/love.png"
+        "iconPath": "img/love.png",
+        "selectedIconPath":"img/love2.png"
       },
       {
         "pagePath": "pages/my/my",
         "text": "我的",
-        "iconPath": "img/person.png"
+        "iconPath": "img/person.png",
+        "selectedIconPath": "img/person.png"
       }
     ]
   },

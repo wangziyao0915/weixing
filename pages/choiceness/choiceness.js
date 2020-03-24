@@ -1,6 +1,9 @@
 // pages/choiceness/choiced'dness.js
 import data from "../../mock/data.js"
 import promote from "../../mock/promote.js"
+import girlData from "../../mock/girldata.js"
+import arrTranstion from "../../utils/arrTranstion.js"
+import fetch from "../../utils/http.js"
 Page({
 
   /**
@@ -10,11 +13,12 @@ Page({
     flag: 0,
     bannerlist: data.dataList,
     sectionData: [{ name: "分类", icon: "icon-icon_classify" }, { name: "排行", icon: "icon-dragon" }, { name: "全本", icon: "icon-city" }, { name: "免费", icon: "icon-dragon" }],
-    recommend: data.recommend , //主编力荐数据
+    recommend: arrTranstion(data.recommend,3)      , //主编力荐数据
     bestsellersone: data.bestsellers[0], //本期主打第一项
     bestsellersList: data.bestsellers.slice(1, data.bestsellers.length), //本期主打剩下的
     everybody: data.everybody,
-    endBook:data.endBook.slice(0,3)
+    endBook:data.endBook.slice(0,3),
+    indexChangeFlag:0
   },
 
   optionclick(e) {
@@ -23,12 +27,50 @@ Page({
       flag: e.currentTarget.dataset.flag * 1
     })
 
+    if (e.currentTarget.dataset.flag==1){
+      this.setData({
+        bannerlist:girlData.dataList,
+        recommend: arrTranstion(girlData.recommend, 3)     , //主编力荐数据
+        bestsellersone: girlData.bestsellers[0], //本期主打第一项
+        bestsellersList: girlData.bestsellers.slice(1, data.bestsellers.length), //本期主打剩下的
+        everybody: girlData.everybody,
+        endBook: girlData.endBook.slice(0, 3)
+      })
+
+    }else{
+      this.setData({
+        bannerlist: data.dataList,
+        recommend: arrTranstion(data.recommend,3), //主编力荐数据
+        bestsellersone: data.bestsellers[0], //本期主打第一项
+        bestsellersList: data.bestsellers.slice(1, data.bestsellers.length), //本期主打剩下的
+        everybody: data.everybody,
+        endBook: data.endBook.slice(0, 3)
+      })
+
+
+    }
+  },
+  sweiperbind(e){
+   
+    this.setData({
+      indexChangeFlag: e.detail.current
+    })
+   
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    console.log(this.data.bestsellersList)
+  onLoad: function () {
+    // wx.showLoading({
+    //   title: '努力奔跑中',
+ 
+    // })
+    console.log(fetch)
+    fetch('/h5/sites').then(res=>{
+      console.log(res)
+    })
+
+
   },
 
   /**

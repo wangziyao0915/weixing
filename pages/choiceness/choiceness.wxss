@@ -1,166 +1,180 @@
-.choiceness{
+.choiceness {
   font-size: 32rpx;
- background: #ececec;
-
+  background: #ececec;
 }
 
-.heard{
+.heard {
   width: 96%;
   height: 90rpx;
   line-height: 90rpx;
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   background: white;
-   padding: 0 20rpx; 
+  padding: 0 20rpx;
 }
-.heard .title{
+.heard .title {
   font-size: 44rpx;
 }
-.heard .option{
-  color: #cccccc;
-} 
-.all-icon{
+.heard .option {
+  color: #ccc;
+}
+.all-icon {
   display: flex;
   color: #d81e06;
-
 }
-.icon-more{
+.icon-more {
   margin-left: 30rpx;
 }
-
-.active{
-color: black;
-border-bottom:1px solid #ee5048; 
-
+.active {
+  color: black;
+  border-bottom: 1px solid #ee5048;
 }
-.option text{
-
+.option text {
   display: inline-block;
- 
   height: 80rpx;
-  margin: 0 20rpx;
- 
-  
+  margin: 0 20rpx
 }
-.swiper image{
+.swiper image {
   width: 100%;
   height: 260rpx;
 }
-.swiper{
-
+.swiper {
   height: 260rpx;
 }
-.section{
-  padding-top: 30rpx;
+.section {
+  padding: 40rpx;
   display: flex;
-  justify-content: space-around;
-  background: white;
-
+  justify-content: space-between;
+  background: white
 }
-.section .iconfont{
+.section .iconfont {
   border: 1px solid black;
   width: 78rpx;
   height: 78rpx;
   text-align: center;
   line-height: 78rpx;
   border-radius: 50%;
-  font-size: 70rpx;
-  
+  font-size: 70rpx
 }
-.section .sectionName{
-  color:  #999;
+.section .sectionName {
+  color: #999;
   text-align: center;
-  margin-top: 10rpx;
+  margin-top: 10rpx
 }
-.recommend-title{
+.recommend-title {
   margin-top: 20rpx;
   background: white;
-  padding:0 30rpx;
+  padding: 0 30rpx;
+  display: flex;
+  position: relative;
 }
-.recommend-content{
+.recommend-content {
   width: 100%;
   height: 360rpx;
   background: white;
+  padding-left: 30rpx;
 }
-.recommend-content-swiper image{
+.recommend-content-swiper image {
   width: 190rpx;
   height: 266rpx;
 }
-
-
-.bookName{
-  text-align: center;
+.recommend-content-swiper {
+  height: 380rpx;
 }
-.featured{
-  padding:0 40rpx 40rpx 40rpx;
-  margin-top:20rpx; 
-  background: white;
- 
-}
-
-.featured-show{
-
+.recommend-item {
   display: flex;
   justify-content: space-between;
-  margin:30rpx 0;
+}
+.recommend-item-all {
+  flex: 1;
+}
+.recommend-item {
+  width: 100%;
+  height: 600rpx;
+}
+.recommend-dots {
+  display: flex;
+  position: absolute;
+  top: 40rpx;
+  right: 30rpx;
+}
+.dots {
+  width: 10rpx;
+  height: 10rpx;
+  background: #555;
+  margin: 0 10rpx;
+  border-radius: 50%;
+}
+.recommend-bookName {
+  width: 190rpx;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.bookName {
+  text-align: center;
+}
+.featured {
+  padding: 0 40rpx 40rpx 40rpx;
+  margin-top: 20rpx;
+  background: white
+}
+.featured-show {
+  display: flex;
+  justify-content: space-between;
+  margin: 30rpx 0;
   padding: 10rpx 10rpx;
   border: 1px solid #bbb;
   border-radius: 20px;
 }
-.featured-show view{
-  padding: 0 30rpx;
+.featured-show view {
+  padding: 0 30rpx
 }
-.featured-show-penName{
-color: #bbb;
-font-size: 24rpx;
-line-height: 38rpx;
+.featured-show-penName {
+  color: #bbb;
+  font-size: 24rpx;
+  line-height: 38rpx
 }
-.featured-box{
-padding-right: 30rpx;
-}
-
-
-
-
-.everybody{
+.everybody {
   background: white;
-  padding: 0 30rpx;
-  margin-top: 20rpx;
-  
+  padding: 0 40rpx 40rpx 40rpx;
+  margin-top: 20rpx
 }
-.everybody-content{
+.everybody-content {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   text-align: center;
 }
-.everybody-content image{
+.everybody-content image {
   width: 190rpx;
   height: 278rpx;
   border-radius: 5px;
 }
-.endBook{
+.everybody-bookname {
+  width: 190rpx;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.endBook {
   margin-top: 20rpx;
   background: white;
-  padding:0 40rpx 40rpx 40rpx;
+  padding: 0 40rpx 0 40rpx;
 }
- /* .endBook-content introduce{
-  border-bottom: 1px solid #999;
-  background: yellow;
-} */
-
-.view-more{
+.view-more {
+  margin-top: -26rpx;
   border-top: 1px solid #999;
   height: 80rpx;
   text-align: center;
   line-height: 80rpx;
   color: red;
-  font-size: 40rpx;
-  background: white;
+  background: white
 }
-.line{
+.endBook-item .line {
   width: 100%;
-  height: 2rpx;
+  height: 4rpx;
   background: #bbb;
-  margin: 10rpx 0 20rpx 0;
+  margin: 20rpx 0 20rpx 0;
+}
+.indexChangeAcive {
+  background: yellow;
 }

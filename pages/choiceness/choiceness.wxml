@@ -6,7 +6,7 @@
     <view class="option">
       <text data-flag="0" bindtap="optionclick" class="{{flag===0 && 'active'}}">男生</text>
       <text data-flag="1" bindtap="optionclick" class="{{flag==1 && 'active'}}"> 女生</text>
-      <text data-flag="2" bindtap="optionclick" class="{{flag==2 && 'active'}}"> 出版</text> </view>
+      <text data-flag="2" bindtap="optionclick" class="{{flag==2 && 'active'}}"> 出版</text>         </view>  
     <view class="all-icon">
       <view class="iconfont icon-0201chazhao"></view>
       <view class="iconfont icon-more"></view>
@@ -34,27 +34,29 @@
   <view class="recommend">
     <view class="recommend-title">
       <title title="主编力荐"></title>
+      <view  class="recommend-dots">
+       <view wx:for="{{recommend}}" wx:key="i" class="{{indexChangeFlag==i ?'dots indexChangeAcive ' :'dots'}}"   wx:for-index='i'>
+      
+      </view>
+      </view>
+     
     </view>
     <view class="recommend-content">
-      <!-- <view wx:for="{{promote}}" wx:key="item.bookName">
-        <image src="{{item.imgUrl}}"></image>
-        <view class="bookName">{{item.bookName}} </view>
-      </view> -->
-      <swiper display-multiple-items="3" autoplay="true" class="swiper" class="recommend-content-swiper" previous-margin="18px" skip-hidden-item-layout="true">
-        <block>
-          <swiper-item wx:for="{{recommend}}">
-            <view>
-              <image src="{{item.imgUrl}}"> </image>
+      <swiper  autoplay="true" class="recommend-content-swiper"  skip-hidden-item-layout="true" bindchange="sweiperbind">
+      <block wx:for="{{recommend}}" wx:key="index">
+          <swiper-item  class='recommend-item'>
+            <view wx:for="{{item}}" wx:key="index"  class="recommend-item-all">
+            <image src="{{item.imgUrl}}"> </image>
+             <view class="recommend-bookName"> {{item.bookName}} </view>
             </view>
-            <view> {{item.bookName}} </view>
-          </swiper-item>
-        </block>
+      
+        </swiper-item>
+      </block>
+    
       </swiper>
-
-
-
     </view>
   </view>
+
 
   <view class="featured">
     <title title="本期主打分类"></title>
@@ -66,34 +68,29 @@
           <view class="featured-show-penName"> {{item.penName}} </view>
         </view>
       </view>
-
     </view>
   </view>
 
   <view class="everybody">
     <title title="大家都在看"> </title>
     <view class="everybody-content">
-      <view wx:for="{{everybody}}" class="everybody-item">
+      <view wx:for="{{everybody}}" wx:key="everybody" class="everybody-item">
         <image src="{{item.imgUrl}}"> </image>
-        <view> {{item.bookName}} </view>
+        <view class="everybody-bookname"> {{item.bookName}} </view>
       </view>
-
     </view>
   </view>
 
   <view class="endBook">
     <title title="完本好书"> </title>
     <view class="endBook-content">
-      <view wx:for="{{endBook}}" wx:key="item.bookName">
-       
-        <introduce   class="endBook-item"   imgUrl="{{ item.imgUrl}}" bookName="{{item.bookName}}" introduction="{{item.introduction}}" userImgUrl="{{item.userImgUrl}}" penName="{{item.penName}}" category="{{item.category}}"></introduce>
+      <view wx:for="{{endBook}}" wx:key="item.bookName" class="endBook-item">
+        <introduce class="endBook-item" imgUrl="{{ item.imgUrl}}" bookName="{{item.bookName}}" introduction="{{item.introduction}}" userImgUrl="{{item.userImgUrl}}" penName="{{item.penName}}" category="{{item.category}}"></introduce>
         <view class="line"></view>
       </view>
-     
     </view>
-
-
-   
   </view>
-   <view class="view-more">查看更多 </view>
+
+  
+  <view class="view-more">查看更多 </view>
 </view>
