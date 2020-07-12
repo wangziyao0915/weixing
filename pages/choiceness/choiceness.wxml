@@ -6,9 +6,9 @@
     <view class="option">
       <text data-flag="0" bindtap="optionclick" class="{{flag===0 && 'active'}}">男生</text>
       <text data-flag="1" bindtap="optionclick" class="{{flag==1 && 'active'}}"> 女生</text>
-      <text data-flag="2" bindtap="optionclick" class="{{flag==2 && 'active'}}"> 出版</text>         </view>  
+      <text data-flag="2" bindtap="optionclick" class="{{flag==2 && 'active'}}"> 出版</text> </view>
     <view class="all-icon">
-      <view class="iconfont icon-0201chazhao"></view>
+      <view class="iconfont icon-0201chazhao" bindtap="onsearch"></view>
       <view class="iconfont icon-more"></view>
     </view>
   </view>
@@ -25,7 +25,7 @@
   </view>
 
   <view class="section">
-    <view wx:for="{{sectionData}}" wx:key="item.name">
+    <view wx:for="{{sectionData}}" wx:key="item.name" data-index="{{index}}" bindtap="storeClick" >
       <view class="iconfont  {{item.icon}}"></view>
       <view class="sectionName"> {{item.name}} </view>
     </view>
@@ -34,25 +34,25 @@
   <view class="recommend">
     <view class="recommend-title">
       <title title="主编力荐"></title>
-      <view  class="recommend-dots">
-       <view wx:for="{{recommend}}" wx:key="i" class="{{indexChangeFlag==i ?'dots indexChangeAcive ' :'dots'}}"   wx:for-index='i'>
-      
+      <view class="recommend-dots">
+        <view wx:for="{{recommend}}" wx:key="i" class="{{indexChangeFlag==i ?'dots indexChangeAcive ' :'dots'}}" wx:for-index='i'>
+
+        </view>
       </view>
-      </view>
-     
+
     </view>
     <view class="recommend-content">
-      <swiper  autoplay="true" class="recommend-content-swiper"  skip-hidden-item-layout="true" bindchange="sweiperbind">
-      <block wx:for="{{recommend}}" wx:key="index">
-          <swiper-item  class='recommend-item'>
-            <view wx:for="{{item}}" wx:key="index"  class="recommend-item-all">
-            <image src="{{item.imgUrl}}"> </image>
-             <view class="recommend-bookName"> {{item.bookName}} </view>
+      <swiper autoplay="true" class="recommend-content-swiper" skip-hidden-item-layout="true" bindchange="sweiperbind">
+        <block wx:for="{{recommend}}" wx:key="index">
+          <swiper-item class='recommend-item'>
+            <view wx:for="{{item}}" wx:key="index" class="recommend-item-all">
+              <image src="{{item.imgUrl}}" data-bookid="{{item.bookId}}" bindtap="goDetail"> </image>
+              <view class="recommend-bookName"> {{item.bookName}} </view>
             </view>
-      
-        </swiper-item>
-      </block>
-    
+
+          </swiper-item>
+        </block>
+
       </swiper>
     </view>
   </view>
@@ -91,6 +91,25 @@
     </view>
   </view>
 
-  
+  <view class="brand">
+    <view class="brand-heard">
+      <text>  磨铁文学旗下作品 </text> </view>
+    <view class="brand-content">
+      <view wx:for="{{brand}}" class="brand-content-item">
+        <view class="brand-logo">
+          <image src="{{item.siteIconUrl}} "></image>
+        </view>
+        <view class="brand-content-right">
+      
+        <view class="brand-content-sitename" style="font-size: 32rpx"> {{item.siteName}} </view>
+        <view class="brand-content-introduction" style="color:#cccccc;font-size:28rpx"> {{item.introduction}} </view>
+          </view>
+      </view>
+
+
+    </view>
+
+  </view>
+
   <view class="view-more">查看更多 </view>
 </view>

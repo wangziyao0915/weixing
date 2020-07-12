@@ -1,0 +1,8 @@
+<view>
+<view  >  {{bookDetail.name}} </view>
+<button class="addBook" type="primary" bindtap="addBook"> 加入书架  </button>
+<navigator url="../read/read?bookid={{bookid}}">
+
+<button class="nowRead"  >立即阅读 </button>
+</navigator>
+</view>

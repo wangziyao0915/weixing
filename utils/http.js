@@ -1,5 +1,6 @@
 const baseUrl ="https://app2.motie.com"
 function fetch(url,option={}){
+  console.log("123",)
  return new Promise((resolve,reject)=>{
     wx.request({
       url:baseUrl+url,

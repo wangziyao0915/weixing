@@ -1,35 +1,43 @@
-
-
-  Component({
-    options: {
-      multipleSlots: true // 在组件定义时的选项中启用多slot支持
-
-    },
-    properties: {
-      title: {
-        type: String,
-        value:""
-
-      }
-    },
-
-
-
-
+// pages/read/read.js
+import fetch from "../../utils/http.js"
+Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    catalog:[],
+    fistCatalog:"",
+    content:[],
+    name:""
   },
-  
-
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
+    fetch(`/books/${options.bookid}/chapters`).then(res=>{
+      console.log(res.data.data[1].id)
+      this.setData({
+        catalog:res.data.data,
+        fistCatalog: res.data.data[1].id
+      })
+      fetch(`/chapters/${this.data.fistCatalog}`).then(res => {
+        let content = res.data.content.split('<br/>')
+
+        this.setData({
+          content: content,
+          name: res.data.name
+        })
+      })
+
+    })
+    
+
+    console.log(this.data.fistCatalog)
+
+
 
   },
 

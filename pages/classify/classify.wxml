@@ -1,0 +1,20 @@
+<!--pages/classify/classify.wxml-->
+<view class="classify">
+
+  <view class="classify-menu">
+    <view class="classify-menu-content">
+      <classify menu="频道" option="{{firstCategorys}}" catkey="channelId" bind:data="parentCallBack"></classify>
+      <classify menu="分类" option="{{secondCategorys}}" catkey="sortId" bind:data="parentCallBack"></classify>
+      <classify menu="状态" option="{{threeCategorys}}" catkey="finish" bind:data="parentCallBack"></classify>
+      <classify menu="价格" option="{{fourCategorys}}" catkey="free" bind:data="parentCallBack"></classify>
+    </view>
+
+  </view>
+  <view class="book-content" >
+    <view wx:for="{{innitallData}}">
+          <introduce  bookid="{{item.id}}"  imgUrl="{{item.icon}}" bookName="{{item.name}}" introduction="{{item.recommend}}" userImgUrl="{{item.authorIcon}}" penName="{{item.authorName}}"  category="{{item.bookTags}}"  ></introduce>
+    </view>
+  
+  </view>
+
+</view>

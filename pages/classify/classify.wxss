@@ -1,0 +1,18 @@
+.classify{
+ 
+}
+.heard{
+  height: 70rpx;
+  text-align: center;
+}
+.classify-menu-content{
+   padding: 30rpx;
+}
+.classify-menu{
+  border-top:1px solid #cccccc; 
+    border-bottom:1px solid #cccccc; 
+   
+}
+.book-content{
+  padding: 30rpx;
+}

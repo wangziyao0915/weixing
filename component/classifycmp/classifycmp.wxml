@@ -1,0 +1,14 @@
+<view class="classifycmp">
+  <view class="classifycmp-box">
+    <view class="menu">{{menu}} </view>
+    <view class="{{triangleflag?'option-box-up' : 'option-box-down'}}    ">
+      <text class="{{changeIndexfFlay==index ? 'active' : 'option'}}" wx:for="{{option}}" data-id="{{item.id}}"  data-index="{{index}}" bindtap="changeOption"> {{item.name}}</text>
+       <view wx:if="{{option.length>4}}"   class="{{triangleflag?'triangle up' : 'triangle down'}}" bindtap="triangle">
+    </view>
+   
+
+    </view>
+
+  </view>
+
+</view>

@@ -178,3 +178,38 @@
 .indexChangeAcive {
   background: yellow;
 }
+.brand{
+
+  background: white;
+  margin-top: 30rpx;
+   padding: 0 40rpx 60rpx 40rpx;
+   
+}
+.brand-heard{
+height: 160rpx;
+text-align: center;
+line-height: 160rpx;
+font-size: 38rpx;
+
+}
+.brand-heard text{
+border-bottom: 1px solid red;
+padding-bottom: 20rpx;
+}
+.brand-content-item{
+  height: 180rpx;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 20rpx;
+  display: flex;
+  
+}
+.brand-logo image{
+  width: 80rpx;
+  height: 80rpx;
+  margin: 40rpx 30rpx 0 30rpx;
+
+}
+.brand-content-right{
+  margin-top:40rpx;
+}

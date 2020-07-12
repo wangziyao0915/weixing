@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "classify":"../../component/classifycmp/classifycmp"
+  },
+  "navigationBarTitleText":"分类"
+}

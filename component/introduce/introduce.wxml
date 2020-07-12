@@ -1,14 +1,23 @@
 <view class="introduce">
-<view>
-<view class="model">
- <view class="picture"> <image src="{{imgUrl}}"></image> </view>
-  <view class="content">
-    <view> <text class="boxName"> {{bookName}} </text>   </view>  
-     <view>   <text class="brief "> {{introduction}} </text> </view>
-   <view class="author-type" >   <view class="author"> <image src="{{userImgUrl}}"></image>  {{penName}} </view>   <view class="book-type"> {{category}} </view> </view> 
+  <view>
+  <navigator url="../../pages/detail/detail?bookid={{bookid}}">
+    <view class="model">
+      <view class="picture">
+        <image src="{{imgUrl}}"></image>
+      </view>
+      <view class="content">
+        <view>
+          <text class="boxName"> {{bookName}} </text> </view>
+        <view>
+          <text class="brief "> {{introduction}} </text> </view>
+        <view class="author-type">
+          <view class="author">
+            <image src="{{userImgUrl}}"></image> {{penName}} </view>
+          <view class="book-type"> {{category}} </view>
+        </view>
+      </view>
+    </view>
+    </navigator>
   </view>
-</view>
-
-</view>
 
 </view>

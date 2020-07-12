@@ -18,7 +18,9 @@ Page({
     bestsellersList: data.bestsellers.slice(1, data.bestsellers.length), //本期主打剩下的
     everybody: data.everybody,
     endBook:data.endBook.slice(0,3),
-    indexChangeFlag:0
+    indexChangeFlag:0,
+    brand:{}
+
   },
 
   optionclick(e) {
@@ -50,12 +52,31 @@ Page({
 
     }
   },
+  goDetail(e){
+    
+    console.log(e.currentTarget.dataset.bookid)
+    wx.navigateTo({
+      url:"../detail/detail",
+      success:function(res){
+        res.eventChannel.emit("goDetallData", e.currentTarget.dataset.bookid)
+      }
+    })
+
+
+  },
+
+
   sweiperbind(e){
-   
     this.setData({
       indexChangeFlag: e.detail.current
     })
    
+  },
+  onsearch(){
+    wx.navigateTo({
+      url: "../search/search"
+    })
+
   },
   /**
    * 生命周期函数--监听页面加载
@@ -66,12 +87,35 @@ Page({
  
     // })
     console.log(fetch)
-    fetch('/h5/sites').then(res=>{
+    fetch('/h5/sites',{
+      body:"789"
+    }).then(res=>{
       console.log(res)
+      this.setData({
+        brand:res.items
+      })
     })
+  },
 
+  storeClick(e){
+    if (e.currentTarget.dataset.index==0){
+      wx.navigateTo({
+        url:"../classify/classify"
+      })
+    } else if (e.currentTarget.dataset.index == 1){
+      wx.navigateTo({
+        url: "../rank/rank"
+      })
+
+    }
 
   },
+
+
+
+
+
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成

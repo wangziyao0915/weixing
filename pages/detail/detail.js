@@ -1,42 +1,56 @@
-
-
-  Component({
-    options: {
-      multipleSlots: true // 在组件定义时的选项中启用多slot支持
-
-    },
-    properties: {
-      title: {
-        type: String,
-        value:""
-
-      }
-    },
-
-
-
-
+// pages/detail/detail.js
+import fetch from "../../utils/http.js"
+const app = getApp()
+Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    bookid:"",
+    bookDetail:{}
+  },
+  addBook(){
+    app.globalData.addBookId={
+      bookid: this.data.bookid
+    }
 
   },
-  
+
 
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options.bookid)
+  this.setData({
+    bookid: options.bookid
+  })
 
+    const eventChannel = this.getOpenerEventChannel()
+    eventChannel.on('goDetallData',  (data)=> {
+      console.log("传过来的数据",data)
+      this.setData({
+        bookid: data 
+
+      })
+  
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    fetch(`/books/${this.data.bookid}/detail`).then(res=>{
+      console.log("书本数据",res)
+      if (res.error_no==200){
+        this.setData({
+          bookDetail:res.data
+        })
+      }
+    })
 
   },
 

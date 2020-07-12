@@ -1,9 +1,15 @@
 {
   "pages": [
     "pages/choiceness/choiceness",
+    "pages/rank/rank",
+    "pages/classify/classify",
+    "pages/search/search",
     "pages/index/index",
     "pages/my/my",
-    "component/title/title"
+    "component/title/title",
+    "pages/read/read",
+    "pages/detail/detail",
+    "pages/addBook/addBook"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -12,23 +18,18 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    
-   
-
     "list": [
-     
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/addBook/addBook",
         "text": "书架",
         "iconPath": "img/book2.png",
         "selectedIconPath": "img/book2.png"
-        
       },
       {
         "pagePath": "pages/choiceness/choiceness",
         "text": "精选",
         "iconPath": "img/love.png",
-        "selectedIconPath":"img/love2.png"
+        "selectedIconPath": "img/love2.png"
       },
       {
         "pagePath": "pages/my/my",
@@ -38,13 +39,10 @@
       }
     ]
   },
-
-    "usingComponents": {
-      "title": "component/title/title",
-      "introduce":"component/introduce/introduce"
-    },
-
-
+  "usingComponents": {
+    "title": "component/title/title",
+    "introduce": "component/introduce/introduce"
+  },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }

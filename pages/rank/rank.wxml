@@ -1,0 +1,21 @@
+<view class="rank-box">
+  <view class="rank">
+    <!-- <view class="tab">
+      <view class=" tab-connet">
+        <text> 男生</text>
+        <text>女生</text>
+      </view>
+    </view> -->
+    <view class="content">
+
+      <view class=" navigation">
+        <view bindtap="navigationChange" data-index="{{index}}"   class="{{changeIndex==index ?'navigation-item  active': 'navigation-item'}}     navigation-item" wx:for="{{navigation}}" wx:key="name"> {{item.name}} </view>
+      </view>
+      <view class="book-content">
+        故事
+      </view>
+    </view>
+
+  </view>
+
+</view>

@@ -31,7 +31,12 @@ Component({
     penName:{
       type: String,
       value: ""
+    },
+    bookid:{
+      type:String,
+      value:""
     }
+
   },
 
   /**

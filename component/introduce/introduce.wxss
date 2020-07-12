@@ -43,3 +43,6 @@ border:  1px solid #999;
   
 
 }
+.book-content{
+  padding: 30rpx;
+}

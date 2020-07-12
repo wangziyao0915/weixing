@@ -1,0 +1,4 @@
+/* pages/detail/detail.wxss */
+.addBookp{
+  background: green;
+}

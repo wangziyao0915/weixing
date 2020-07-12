@@ -1,0 +1,30 @@
+.onseatch{
+  
+  padding: 30rpx;
+  border-bottom: 1px solid #cccccc;
+}
+.onseatch-input{
+  display: flex;
+  border: 1px solid #cccccc;
+  border-radius:25px; 
+    padding: 10rpx;
+}
+
+.connet{
+  font-size: 34rpx;
+   padding: 30rpx;
+ 
+}
+.everybodyList-item{
+white-space:nowrap; 
+/* border: 1px solid black; */
+padding: 0 16rpx; 
+margin: 20rpx 10rpx ;
+
+
+}
+.everybodyList{
+  display: flex;
+flex-wrap: wrap;
+/* justify-content: space-around; */
+}

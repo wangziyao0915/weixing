@@ -1,0 +1,34 @@
+<view class="search">
+  <view class="onseatch">
+    <view class="onseatch-input">
+      <icon type="search"></icon>
+      <input focus="true" bindinput="inputEvent"></input>
+    </view>
+  </view>
+  <view class="connet">
+  <view wx:if="{{falg}}">
+
+    <view class="history-search"  >
+      <title title="最近搜索"></title>
+       <view class="everybodyList">
+      <view wx:for="{{historyList}}" class="everybodyList-item"> {{item}} </view>
+      </view>
+    </view>
+    <view class="everybody-search">
+      <title title="大家都在搜"></title>
+      <view class="everybodyList">
+      <view wx:for="{{everybodyList}}" class="everybodyList-item"> {{item.name}} </view>
+      </view>
+    </view>
+      </view>
+
+
+    <view class="search-connet">
+      <view wx:for="{{searchlist}}">
+        <introduce imgUrl="{{item.icon}}" bookName="{{item.name}}" introduction="{{item.introduce}}" userImgUrl="{{item.authorIcon}}" penName="{{item.authorName}}"></introduce>
+      </view>
+    </view>
+  </view>
+
+
+</view>

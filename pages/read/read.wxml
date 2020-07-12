@@ -1,0 +1,3 @@
+
+<view>{{name}}</view>
+<view wx:for="{{content}}" class="section">{{item}}</view>

@@ -1,35 +1,47 @@
-
-
-  Component({
-    options: {
-      multipleSlots: true // 在组件定义时的选项中启用多slot支持
-
-    },
-    properties: {
-      title: {
-        type: String,
-        value:""
-
-      }
-    },
-
-
-
-
+// pages/rank/rank.js
+import fetch from "../../utils/http.js"
+Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    navigation:[],
+    changeIndex:0
   },
-  
+  navigationChange(e){
+    console.log(e)
+  this.setData({
+    changeIndex: e.currentTarget.dataset.index
+
+  })
+    console.log(this.data.changeIndex)
+  },
+
+
 
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    fetch("/ranking?rankType=9&sex=22&pageNo=1&siteId=6&timeLimit=4&group=1&pageSize=10").then(res=>{
+      if(res.error_no==200){
+        this.setData({
+          navigation:res.data.rank
+        })
+      }
+        console.log(res)
+    })
+    fetch("/ranking?rankType=9&sex=22&pageNo=1&siteId=6&timeLimit=4&group=1&pageSize=10").then(res => {
+      if (res.error_no == 200) {
+        this.setData({
+          navigation: res.data.rank
+        })
+      }
+      console.log(res)
+    })
+
 
   },
 
